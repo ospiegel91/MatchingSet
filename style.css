@@ -19,7 +19,9 @@
     margin: auto;
 }
 
-
+.shape {
+    margin : 2px;
+}
 
 .purple{
       background-color: purple;
@@ -37,7 +39,9 @@
 
  }
 
-
+.solid {
+    
+}
 .outlined{
     background-color: white;
 }
@@ -50,11 +54,11 @@
 
 .heart {
     position: relative;
-    width: 100px;
-    height: 90px;
-}
-.heart:before,
-.heart:after {
+    width: 25%;
+    height: 25%;
+  }
+  .heart:before,
+  .heart:after {
     position: absolute;
     content: "";
     left: 50px;
@@ -74,23 +78,24 @@
 /* Circle */
 
 
-.circle {
-    width: 100px;
-    height: 100px;
+  .circle {
+    width: 25%;
+    height: 25%;
     border-radius: 50%
 }
 
 /* Diamond */
 
-.diamond {
-    border-width: 0 25px 25px 25px;
-    height: 0;
-    width: 50px;
+  .diamond {
+    /* border-width: 0 25px 25px 25px; */
+    height: 25%;
+    width: 25%;
     box-sizing: content-box;
     position: relative;
-    margin: 20px 0 50px 0;
-}
-.diamond:after {
+    border-radius: 25%
+    /* margin: 20px 0 50px 0; */
+  }
+  .diamond:after {
     content: "";
     position: absolute;
     top: 25px;
@@ -98,4 +103,4 @@
     width: 0;
     height: 0;
     border-width: 70px 50px 0 50px;
-}
+  }
