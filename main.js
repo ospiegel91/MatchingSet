@@ -1,3 +1,4 @@
+SetGame.selectTwelveCards()
 class App extends React.Component {
     render() {
         return (
@@ -30,22 +31,22 @@ class Board extends React.Component {
         return (
             <div className="board" onClick={this.checkMatch}>
                 <div className="row">
-                    <Card cardType={SetGame.card1} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card2} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card3} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card4} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[0]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[1]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[2]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[3]} getObj={this.checkMatch}/>
                 </div>
                 <div className="row">
-                    <Card cardType={SetGame.card5} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card6} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card7} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card8} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[4]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[5]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[6]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[7]} getObj={this.checkMatch}/>
                 </div>
                 <div className="row">
-                    <Card cardType={SetGame.card9} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card10} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card11} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.card12} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[8]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[9]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[10]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[11]} getObj={this.checkMatch}/>
                 </div>
 
             </div>
