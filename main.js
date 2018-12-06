@@ -10,8 +10,34 @@ class App extends React.Component {
 class Board extends React.Component {
     render() {
         return (
-            <div>
-                
+            <div className="board">
+                <div className="row">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+                <div className="row">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+                <div className="row">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+
+            </div>
+        );
+    }
+}
+class Card extends React.Component {
+    render() {
+        return (
+            <div className="card">
             </div>
         );
     }
