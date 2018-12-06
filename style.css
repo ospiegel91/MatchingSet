@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+.{
+    background-attachment: fixed;
+}
 /* HeartShape */
 
 #heart {
@@ -58,27 +60,3 @@
     border-color: red transparent transparent transparent;
     border-width: 70px 50px 0 50px;
   }
-=======
-body
-
-.board {
-    height: 750px;
-    width: 750px;
-    border: solid thin blue;
-}
-
-.row {
-    height: 30%;
-    border: solid 1px black;
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-}
-
-.card {
-    height: 80%;
-    width: 24%;
-    border: solid 1px red;
-    margin: auto;
-}
->>>>>>> 5ef1918aa5aa3ea40602b3a59bda4138123bb47e
