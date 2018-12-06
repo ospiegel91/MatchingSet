@@ -19,27 +19,54 @@
     margin: auto;
 }
 
-/* HeartShape */
 
-#heart {
+
+  .purple{
+      background-color: purple;
+      border: 3px solid purple;
+  }
+
+  .green{
+    background-color: green;
+    border: 3px solid green;
+}
+
+.red{
+    background-color: red;
+    border: 3px solid red;
+
+ }
+
+
+  .outlined{
+      background-color: white;
+  }
+
+  .striped{
+      opacity: 0.5;
+
+  }
+
+ /* HeartShape */
+
+.heart {
     position: relative;
     width: 100px;
     height: 90px;
   }
-  #heart:before,
-  #heart:after {
+  .heart:before,
+  .heart:after {
     position: absolute;
     content: "";
     left: 50px;
     top: 0;
     width: 50px;
     height: 80px;
-    background: red;
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
   }
-  #heart:after {
+  .heart:after {
     left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
@@ -48,18 +75,15 @@
   /* Circle */
 
 
-  #circle {
+  .circle {
     width: 100px;
     height: 100px;
-    background: red;
     border-radius: 50%
   }
 
   /* Diamond */
 
-  #cut-diamond {
-    border-style: solid;
-    border-color: transparent transparent red transparent;
+  .diamond {
     border-width: 0 25px 25px 25px;
     height: 0;
     width: 50px;
@@ -67,14 +91,13 @@
     position: relative;
     margin: 20px 0 50px 0;
   }
-  #cut-diamond:after {
+  .diamond:after {
     content: "";
     position: absolute;
     top: 25px;
     left: -25px;
     width: 0;
     height: 0;
-    border-style: solid;
-    border-color: red transparent transparent transparent;
     border-width: 70px 50px 0 50px;
   }
+
