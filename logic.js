@@ -42,3 +42,24 @@ SetGame.selectTwelveCards = function() {
         SetGame.selectedCards.push(SetGame[`card${randomNb}`]);
     }
 }
+
+
+SetGame.isMatch = function(category1,category2,category3){
+    if(category1 === category2 && category2 === category3 && category1 === category3 ||
+        category1 !== category2 && category1 !== category3 && category2 !== category3){
+            return true;
+        } else {
+            return false;
+        }
+}
+SetGame.isSet = function (card1, card2, card3){
+    var isShape = SetGame.isMatch(card1.shape, card2.shape, card3.shape);
+    var isColor = SetGame.isMatch(card1.color, card2.color, card3.color);
+    var isNumber = SetGame.isMatch(card1.number, card2.number, card3.number);
+    var isFilling = SetGame.isMatch(card1.filling, card2.filling, card3.filling);
+    if (isShape && isColor && isNumber && isFilling){
+        return true;
+    } else {
+        return false;
+    }
+}
