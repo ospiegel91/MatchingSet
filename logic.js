@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // All specifics for cards creation
 window.SetGame = {};    // maybe go back to var 
 SetGame.colors = ["purple", "green", "red"];
@@ -7,15 +6,7 @@ SetGame.fillings = ["solid", "striped", "outlined"];
 SetGame.numbers = [1, 2, 3];
 SetGame.cardsCollection = [];
 
-class Card {
-    constructor(name, color, shape, filling, number) {
-        this.name = name;
-        this.color = color;
-        this.shape = shape;
-        this.filling = filling;
-        this.number = number;
-    }
-};
+
 
 
 SetGame.generateAllCards = function () {
@@ -34,8 +25,7 @@ SetGame.generateAllCards = function () {
         }
     }
 }
-=======
-window.SetGame = {}
+
 
 class Card {
     constructor(shape, color, number, filing) {
@@ -63,4 +53,3 @@ SetGame.color = ["purple", "red", "green"];
 SetGame.number = [1, 2, 3];
 SetGame.filing = ["solid", "striped", "outlined"];
 
->>>>>>> a168d5c8a752881d603e1ba507214559a0e15096
