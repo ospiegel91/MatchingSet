@@ -1,185 +1,195 @@
+body{
+  background-color:   #FFFAF0;
+
+}
 .board {
-    height: 750px;
-    width: 750px;
-    border: solid thin blue;
+  height: 90%;
+  width: 50%;
+  border: solid 2px black;
+  padding: 2%;
+  border-radius: 10px;
+  margin: 0 25%;
+  background-color: rgb(218, 192, 241);
+
 }
 
 .row {
-    height: 30%;
-    border: solid 1px black;
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
 }
 
 .card {
-    height: 80%;
-    width: 24%;
-    border: solid 1px red;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  height: 85%;
+  width: 23%;
+  border: solid 2px grey;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 5px 10px plum;
 }
 
 
- /* HeartShape */
+/* HeartShape */
 
- .heart {
-    position: relative;
-    width: 25%;
-    height: 25%;
-  }
+.heart {
+  position: relative;
+  width: 25%;
+  height: 25%;
+}
 
-  .heart:before,
-  .heart:after {
-    position: absolute;
-    content: "";
-    left: 25px;
-    top: 0;
-    width: 25px;
-    height: 40px;
-    border-radius: 25px 25px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-  }
-  .heart.purple:before,
-  .heart.purple:after {
-    background: purple;
-  }
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 25px;
+  top: 0;
+  width: 25px;
+  height: 40px;
+  border-radius: 25px 25px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart.purple:before,
+.heart.purple:after {
+  background: purple;
+}
 
-  .heart.green:before,
-  .heart.green:after {
-    background: green;
-  }
+.heart.green:before,
+.heart.green:after {
+  background: green;
+}
 
-  .heart.red:before,
-  .heart.red:after {
-    background: red;
-  }
+.heart.red:before,
+.heart.red:after {
+  background: red;
+}
 
-  .heart.purple:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-  }
+.heart.purple:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
 
-  .heart.green:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-  }
-  .heart.red:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+.heart.green:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.heart.red:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 /* Circle */
 
 
-  .circle.purple {
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
-    background-color: purple;
-    border: 3px solid purple;
-  }
+.circle.purple {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: purple;
+  border: 3px solid purple;
+}
 
-  .circle.green {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: green;
-    border: 3px solid green;
-  }
+.circle.green {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: green;
+  border: 3px solid green;
+}
 
-  .circle.red {
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
-    background-color: red;
-    border: 3px solid red;
-  }
+.circle.red {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid red;
+}
 
 /* Diamond */
 
-  .diamond {
-    border-style: solid;
-    border-width: 0 12.5px 12.5px 12.5px;
-    height: 0;
-    width: 25px;
-    box-sizing: content-box;
-    position: relative;
-    margin: 10px 0 25px 0;
-  }
+.diamond {
+  border-style: solid;
+  border-width: 0 12.5px 12.5px 12.5px;
+  height: 0;
+  width: 25px;
+  box-sizing: content-box;
+  position: relative;
+  margin: 10px 0 25px 0;
+}
 
-  .diamond.purple {
-    border-color: transparent transparent purple transparent;
-  }
+.diamond.purple {
+  border-color: transparent transparent purple transparent;
+}
 
-  .diamond.green {
-    border-color: transparent transparent green transparent;
-  }
+.diamond.green {
+  border-color: transparent transparent green transparent;
+}
 
-  .diamond.red {
-    border-color: transparent transparent red transparent;
-  }
+.diamond.red {
+  border-color: transparent transparent red transparent;
+}
+
+
+
+.diamond:after {
+  content: "";
+  position: absolute;
+  top: 12.5px;
+  left: -12.5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 35px 25px 0 25px;
+}
+.diamond.purple:after {
   
+  border-color: purple transparent transparent transparent;
 
+}
+
+.diamond.green:after {
   
-  .diamond:after {
-    content: "";
-    position: absolute;
-    top: 12.5px;
-    left: -12.5px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 35px 25px 0 25px;
-  }
-  .diamond.purple:after {
-    
-    border-color: purple transparent transparent transparent;
+  border-color: green transparent transparent transparent;
 
-  }
+}
 
-  .diamond.green:after {
-    
-    border-color: green transparent transparent transparent;
+.diamond.red:after {
+  
+  border-color: red transparent transparent transparent;
 
-  }
-
-  .diamond.red:after {
-    
-    border-color: red transparent transparent transparent;
-
-  }
+}
 
 .outlined{
-    background: white!important;
+  background: white!important;
 }
 .striped.purple{
-    background: 
-    repeating-linear-gradient(50deg, purple,
-     purple 10px, 
-     white 10px, 
-     white 20px);
+  background: 
+  repeating-linear-gradient(50deg, purple,
+   purple 10px, 
+   white 10px, 
+   white 20px);
 }
 
 
 .striped.green{
-    background: 
-    repeating-linear-gradient(50deg, green, 
-    green 10px, 
-    white 10px, 
-    white 20px);
+  background: 
+  repeating-linear-gradient(50deg, green, 
+  green 10px, 
+  white 10px, 
+  white 20px);
 }
 
 .striped.red{
-    background: 
-    repeating-linear-gradient(50deg, red,
-     red 10px, 
-     white 10px, 
-     white 20px);
-}
+  background: 
+  repeating-linear-gradient(50deg, red,
+   red 10px, 
+   white 10px, 
+   white 20px);

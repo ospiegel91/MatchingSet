@@ -57,7 +57,7 @@ SetGame.isSet = function (card1, card2, card3){
     var isShape = SetGame.isMatch(card1.shape, card2.shape, card3.shape);
     var isColor = SetGame.isMatch(card1.color, card2.color, card3.color);
     var isNumber = SetGame.isMatch(card1.number, card2.number, card3.number);
-    var isFilling = SetGame.isMatch(card1.fillings, card2.fillings, card3.fillings);
+    var isFilling = SetGame.isMatch(card1.filling, card2.filling, card3.filling);
     if (isShape && isColor && isNumber && isFilling){
         return true;
     } else {

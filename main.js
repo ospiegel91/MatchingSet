@@ -70,7 +70,7 @@ class Card extends React.Component {
     render() {
         var element = []
         for (let i = 1; i <= this.props.cardType.number; i++) {
-            element.push(<div className={`shape ${this.props.cardType.shape} ${this.props.cardType.color} ${this.props.cardType.filing}`}></div>)
+            element.push(<div className={`shape ${this.props.cardType.shape} ${this.props.cardType.color} ${this.props.cardType.filling}`}></div>)
         }
         return (
             <div className="card" data-foobar={this.props.cardType} onClick={this.getObject}>
