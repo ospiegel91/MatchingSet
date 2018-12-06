@@ -19,7 +19,9 @@
     margin: auto;
 }
 
-
+.shape {
+    margin : 2px;
+}
 
   .purple{
       background-color: purple;
@@ -51,8 +53,8 @@
 
 .heart {
     position: relative;
-    width: 100px;
-    height: 90px;
+    width: 25%;
+    height: 25%;
   }
   .heart:before,
   .heart:after {
@@ -76,20 +78,21 @@
 
 
   .circle {
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: 25%;
     border-radius: 50%
   }
 
   /* Diamond */
 
   .diamond {
-    border-width: 0 25px 25px 25px;
-    height: 0;
-    width: 50px;
+    /* border-width: 0 25px 25px 25px; */
+    height: 25%;
+    width: 25%;
     box-sizing: content-box;
     position: relative;
-    margin: 20px 0 50px 0;
+    border-radius: 25%
+    /* margin: 20px 0 50px 0; */
   }
   .diamond:after {
     content: "";
@@ -100,7 +103,3 @@
     height: 0;
     border-width: 70px 50px 0 50px;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> f1710a5472c477250c3e86fc983900e7c68fd3e3
