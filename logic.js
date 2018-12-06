@@ -16,8 +16,8 @@ class Card {
  SetGame.card6 = new Card("heart","purple",3,"striped");
  SetGame.card7 = new Card("heart","purple",3,"striped");
  SetGame.card8 = new Card("heart","purple",2,"outlined");
- SetGame.card9 = new Card("diamond","purple",1,"outlined");
- SetGame.card10 = new Card("diamond","purple",2,"outlined");
+ SetGame.card9 = new Card("diamond","green",1,"outlined");
+ SetGame.card10 = new Card("diamond","green",2,"outlined");
  SetGame.card11 = new Card("diamond","purple",3,"solid");
  SetGame.card12 = new Card("diamond","purple",3,"solid");
 
