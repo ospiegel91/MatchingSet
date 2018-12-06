@@ -14,7 +14,8 @@ class Board extends React.Component {
         this.pushCardsArray = this.pushCardsArray.bind(this)
         this.arrSelected = []
         this.state = {
-            
+            isBoardDisabled : false,
+            counter : 0
         }
     }
     pushCardsArray(obj, event) {
@@ -23,13 +24,24 @@ class Board extends React.Component {
             this.arrSelected.push(obj)
         }
         if(this.arrSelected.length === 3){
-            console.log(SetGame.isSet(this.arrSelected[0], this.arrSelected[1], this.arrSelected[2]))
+            this.setState({
+                isBoardDisabled : true
+            })
+            if(SetGame.isSet(this.arrSelected[0], this.arrSelected[1], this.arrSelected[2])){
+                alert('You have a set !')
+                this.setState({
+                    isBoardDisabled : false
+                })
+            }
+            this.arrSelected = []
+            
         }
     }
     render() {
-        console.log(this.arrSelected)
+        var boardDisabled = this.state.isBoardDisabled ? "boardDisabled" : null;
         return (
-            <div className="board" onClick={this.pushCardsArray}>
+            <div className={`board ${boardDisabled}`} onClick={this.pushCardsArray}>
+                {/* <div className='result'>Number of sets : {this.state.counter}</div> */}
                 <div className="row">
                     <Card cardType={SetGame.selectedCards[0]} getObj={this.pushCardsArray} />
                     <Card cardType={SetGame.selectedCards[1]} getObj={this.pushCardsArray} />
@@ -59,21 +71,26 @@ class Card extends React.Component {
         super(props)
         this.getObject = this.getObject.bind(this)
         this.state = {
-            card: this.props.cardType
+            isSelected: false
+
         }
     }
     getObject(event) {
-        console.log('getObject')
         var obj = this.props.cardType
+        
+        this.setState({
+            isSelected: true
+        })
         this.props.getObj(obj, event)
     }
     render() {
+        var selected = this.state.isSelected ? "selected" : null;
         var element = []
         for (let i = 1; i <= this.props.cardType.number; i++) {
             element.push(<div className={`shape ${this.props.cardType.shape} ${this.props.cardType.color} ${this.props.cardType.filling}`}></div>)
         }
         return (
-            <div className="card" data-foobar={this.props.cardType} onClick={this.getObject}>
+            <div className={`card ${selected}`} data-foobar={this.props.cardType} onClick={this.getObject} >
                 {element}
             </div>
         );

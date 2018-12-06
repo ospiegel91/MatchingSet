@@ -36,55 +36,28 @@ body{
 
 /* HeartShape */
 
-.heart {
-  position: relative;
-  width: 25%;
-  height: 25%;
+.heart{
+    width: 25%;
+    height: 25%;
+    border-radius: 5px 50px;
 }
 
-.heart:before,
-.heart:after {
-  position: absolute;
-  content: "";
-  left: 25px;
-  top: 0;
-  width: 25px;
-  height: 40px;
-  border-radius: 25px 25px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-.heart.purple:before,
-.heart.purple:after {
-  background: purple;
-}
+.heart.purple {  
+    background-color: purple;
+    border: 3px solid purple;
+  }
+  
+  .heart.green {
+    background-color: green;
+    border: 3px solid green;
+  }
+  
+  .heart.red {
+    background-color: red;
+    border: 3px solid red;
+  }
 
-.heart.green:before,
-.heart.green:after {
-  background: green;
-}
 
-.heart.red:before,
-.heart.red:after {
-  background: red;
-}
-
-.heart.purple:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-}
-
-.heart.green:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-}
-.heart.red:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-}
 
 /* Circle */
 
@@ -117,55 +90,31 @@ body{
 
 .diamond {
   border-style: solid;
-  border-width: 0 12.5px 12.5px 12.5px;
-  height: 0;
-  width: 25px;
-  box-sizing: content-box;
-  position: relative;
-  margin: 10px 0 25px 0;
+  height: 15%;
+  width: 15%;
+  transform: rotate(45deg)
 }
 
 .diamond.purple {
-  border-color: transparent transparent purple transparent;
-}
-
-.diamond.green {
-  border-color: transparent transparent green transparent;
-}
-
-.diamond.red {
-  border-color: transparent transparent red transparent;
-}
-
-
-
-.diamond:after {
-  content: "";
-  position: absolute;
-  top: 12.5px;
-  left: -12.5px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 35px 25px 0 25px;
-}
-.diamond.purple:after {
+    width: 15%;
+    height: 15%;
+    background-color: purple;
+    border: 3px solid purple;
+  }
   
-  border-color: purple transparent transparent transparent;
-
-}
-
-.diamond.green:after {
+  .diamond.green {
+    width: 15%;
+    height: 15%;
+    background-color: green;
+    border: 3px solid green;
+  }
   
-  border-color: green transparent transparent transparent;
-
-}
-
-.diamond.red:after {
-  
-  border-color: red transparent transparent transparent;
-
-}
+  .diamond.red {
+    width: 15%;
+    height: 15%;
+    background-color: red;
+    border: 3px solid red;
+  }
 
 .outlined{
   background: white!important;
@@ -193,3 +142,12 @@ body{
    red 10px, 
    white 10px, 
    white 20px);
+}
+
+.selected {
+  pointer-events:none;
+  border: 2px solid yellow;
+}
+.boardDisabled {
+  pointer-events:none;
+}
