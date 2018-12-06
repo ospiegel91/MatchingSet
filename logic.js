@@ -1,14 +1,23 @@
 // All specifics for cards creation
-window.SetGame = {};    // maybe go back to var 
+window.SetGame = {};
 SetGame.colors = ["purple", "green", "red"];
 SetGame.shapes = ["circle", "heart", "diamond"];
-SetGame.fillings = ["solid", "striped", "outlined"];
+SetGame.fillings = ["", "striped", "outlined"];
 SetGame.numbers = [1, 2, 3];
 SetGame.cardsCollection = [];
+SetGame.selectedCards = [];                 // DONT FORGET TO RESET AT THE END OF GAME TO START A NEW GAME 
 
+class Card {
+    constructor(name, color, shape, filling, number) {
+        this.name = name;
+        this.color = color;
+        this.shape = shape;
+        this.filling = filling;
+        this.number = number;
+    }
+};
 
-
-
+/* Will generate the 81 cards */
 SetGame.generateAllCards = function () {
     var counter = 0;
     var name = "";
@@ -18,38 +27,51 @@ SetGame.generateAllCards = function () {
                 for (var l = 0; l < SetGame.numbers.length; l++) {
                     name = `card${counter}`;
                     counter++;
-                    SetGame[name] = new Card (name, SetGame.colors[i], SetGame.shapes[j], SetGame.fillings[k], SetGame.numbers[l]);
-                    SetGame.cardsCollection.push(SetGame[name]);
+                    SetGame.cardsCollection[name] = new Card(name, SetGame.colors[i], SetGame.shapes[j], SetGame.fillings[k], SetGame.numbers[l]);
                 }
             }
         }
     }
 }
+SetGame.generateAllCards();
 
-
-class Card {
-    constructor(shape, color, number, filing) {
-        this.shape = shape;
-        this.color = color;
-        this.number = number;
-        this.filing = filing;
+/* Will select 12 random cards from the generated cards to initiate the game */
+SetGame.selectTwelveCards = function () {
+    for (var i = 0; i < 12; i++) {
+        do {
+            var randomNb = Math.floor(Math.random() * 81)
+        } while (SetGame.selectedCards.indexOf(SetGame.cardsCollection[`card${randomNb}`]) !== -1)
+        SetGame.selectedCards.push(SetGame.cardsCollection[`card${randomNb}`]);
     }
 }
- SetGame.card1 = new Card("circle","red",1,"solid");
- SetGame.card2 = new Card("circle","red",1,"solid");
- SetGame.card3 = new Card("circle","red",1,"solid");
- SetGame.card4 = new Card("circle","red",2,"striped");
- SetGame.card5 = new Card("heart","purple",2,"striped");
- SetGame.card6 = new Card("heart","purple",3,"striped");
- SetGame.card7 = new Card("heart","purple",3,"striped");
- SetGame.card8 = new Card("heart","purple",2,"outlined");
- SetGame.card9 = new Card("diamond","purple",1,"outlined");
- SetGame.card10 = new Card("diamond","purple",2,"outlined");
- SetGame.card11 = new Card("diamond","purple",3,"solid");
- SetGame.card12 = new Card("diamond","purple",3,"solid");
 
-SetGame.shape = ["circle", "heart", "diamond"];
-SetGame.color = ["purple", "red", "green"];
-SetGame.number = [1, 2, 3];
-SetGame.filing = ["solid", "striped", "outlined"];
+/* Will add 3 more cards to the board if necessary */
+SetGame.selectThreeMoreCards = function () {
+    for (var i = 0; i < 3; i++) {
+        do {
+            var randomNb = Math.floor(Math.random() * 81)
+        } while (SetGame.selectedCards.indexOf(SetGame.cardsCollection[`card${randomNb}`]) !== -1)
+        SetGame.selectedCards.push(SetGame.cardsCollection[`card${randomNb}`]);
+    }
+}
 
+
+SetGame.isMatch = function (category1, category2, category3) {
+    if (category1 === category2 && category2 === category3 && category1 === category3 ||
+        category1 !== category2 && category1 !== category3 && category2 !== category3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+SetGame.isSet = function (card1, card2, card3) {
+    var isShape = SetGame.isMatch(card1.shape, card2.shape, card3.shape);
+    var isColor = SetGame.isMatch(card1.color, card2.color, card3.color);
+    var isNumber = SetGame.isMatch(card1.number, card2.number, card3.number);
+    var isFilling = SetGame.isMatch(card1.filling, card2.filling, card3.filling);
+    if (isShape && isColor && isNumber && isFilling) {
+        return true;
+    } else {
+        return false;
+    }
+}
