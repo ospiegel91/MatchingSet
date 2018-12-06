@@ -33,6 +33,3 @@ SetGame.generateAllCards = function () {
         }
     }
 }
-
-SetGame.generateAllCards();
-console.log(SetGame.cardsCollection);
