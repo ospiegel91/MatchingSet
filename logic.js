@@ -2,7 +2,7 @@
 window.SetGame = {};
 SetGame.colors = ["purple", "green", "red"];
 SetGame.shapes = ["circle", "heart", "diamond"];
-SetGame.fillings = ["solid", "striped", "outlined"];
+SetGame.fillings = ["", "striped", "outlined"];
 SetGame.numbers = [1, 2, 3];
 SetGame.cardsCollection = [];
 SetGame.selectedCards = [];                 // DONT FORGET TO RESET AT THE END OF GAME TO START A NEW GAME 
@@ -27,20 +27,20 @@ SetGame.generateAllCards = function () {
                 for (var l = 0; l < SetGame.numbers.length; l++) {
                     name = `card${counter}`;
                     counter++;
-                    SetGame[name] = new Card (name, SetGame.colors[i], SetGame.shapes[j], SetGame.fillings[k], SetGame.numbers[l]);
-                    SetGame.cardsCollection.push(SetGame[name]);
+                    SetGame.cardsCollection[name] = new Card (name, SetGame.colors[i], SetGame.shapes[j], SetGame.fillings[k], SetGame.numbers[l]);
                 }
             }
         }
     }
 }
-SetGame.generateAllCards()
+SetGame.generateAllCards();
 SetGame.selectTwelveCards = function() {
+    SetGame.selectedCards = [];
     for (var i = 0; i <12; i++) {
         do {
             var randomNb = Math.floor(Math.random() * 81)
         } while (SetGame.selectedCards.indexOf(`card${randomNb}`) !== -1)
-        SetGame.selectedCards.push(SetGame[`card${randomNb}`]);
+        SetGame.selectedCards.push(SetGame.cardsCollection[`card${randomNb}`]);
     }
 }
 

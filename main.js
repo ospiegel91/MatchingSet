@@ -11,42 +11,42 @@ class App extends React.Component {
 class Board extends React.Component {
     constructor(props) {
         super(props)
-        this.checkMatch = this.checkMatch.bind(this)
+        this.pushCardsArray = this.pushCardsArray.bind(this)
+        this.arrSelected = []
         this.state = {
-            arrSelected : []
+            
         }
     }
-    checkMatch(obj, event) {
-        console.log('checkMatch')
+    pushCardsArray(obj, event) {
         event.stopPropagation();
-        var newArr = this.state.arrSelected
-        newArr.push(obj)
-        this.setState({
-            arrSelected : newArr
-        })
-        
-
+        if (this.arrSelected.length < 3) {            
+            this.arrSelected.push(obj)
+        }
+        if(this.arrSelected.length === 3){
+            console.log(SetGame.isSet(this.arrSelected[0], this.arrSelected[1], this.arrSelected[2]))
+        }
     }
     render() {
+        console.log(this.arrSelected)
         return (
-            <div className="board" onClick={this.checkMatch}>
+            <div className="board" onClick={this.pushCardsArray}>
                 <div className="row">
-                    <Card cardType={SetGame.selectedCards[0]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[1]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[2]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[3]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[0]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[1]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[2]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[3]} getObj={this.pushCardsArray} />
                 </div>
                 <div className="row">
-                    <Card cardType={SetGame.selectedCards[4]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[5]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[6]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[7]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[4]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[5]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[6]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[7]} getObj={this.pushCardsArray} />
                 </div>
                 <div className="row">
-                    <Card cardType={SetGame.selectedCards[8]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[9]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[10]} getObj={this.checkMatch}/>
-                    <Card cardType={SetGame.selectedCards[11]} getObj={this.checkMatch}/>
+                    <Card cardType={SetGame.selectedCards[8]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[9]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[10]} getObj={this.pushCardsArray} />
+                    <Card cardType={SetGame.selectedCards[11]} getObj={this.pushCardsArray} />
                 </div>
 
             </div>
@@ -59,7 +59,7 @@ class Card extends React.Component {
         super(props)
         this.getObject = this.getObject.bind(this)
         this.state = {
-            card : this.props.cardType
+            card: this.props.cardType
         }
     }
     getObject(event) {
